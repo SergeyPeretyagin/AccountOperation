@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="3" author="Sergey">
+        <insert tableName="account">
+            <column name="account_id" value="7b1cef10-02ab-4594-8619-966a53f26079"/>
+            <column name="number_account" value="40812345678901112131"/>
+            <column name="balance" value="1000"/>
+        </insert>
+        <insert tableName="client">
+            <column name="client_id" value="46a1ba6c-2c26-4ac4-983b-53686f00f099"/>
+            <column name="first_name" value="Ivan"/>
+            <column name="last_name" value="Ivanov"/>
+            <column name="account_id" value="7b1cef10-02ab-4594-8619-966a53f26079"/>
+        </insert>
+        <insert tableName="account">
+            <column name="account_id" value="ae9501d4-f978-4762-a586-a0652d0c7f3a"/>
+            <column name="number_account" value="40811223344556677889"/>
+            <column name="balance" value="1000"/>
+        </insert>
+        <insert tableName="client">
+            <column name="client_id" value="b32ae2aa-8c31-429a-a26c-2361f46a9733"/>
+            <column name="first_name" value="Petr"/>
+            <column name="last_name" value="Petrov"/>
+            <column name="account_id" value="ae9501d4-f978-4762-a586-a0652d0c7f3a"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

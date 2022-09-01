@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+
+    <changeSet id="2" author="Sergey">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="account"/>
+            </not>
+        </preConditions>
+        <createTable tableName="account">
+            <column name="account_id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_passport_data"/>
+            </column>
+            <column name="number_account" type="VARCHAR(255)"/>
+            <column name="balance" type="NUMERIC(19, 3)"/>
+        </createTable>
+        <addUniqueConstraint columnNames="number_account" constraintName="uc_number_account" tableName="account"/>
+    </changeSet>
+</databaseChangeLog>
